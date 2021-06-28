@@ -67,13 +67,11 @@ class User
         }
     }
 
-    function insertCreditCard($utente, $card){
-        
-
+    function insertCreditCard($card){
+    
         foreach ($card as $key){
-            var_dump($key);
+            echo($key);
         }
-        array_push($utente, $key);
     }
 
 
@@ -103,7 +101,7 @@ class Premium extends User
 
 $chiara = new User('Chiara', 'Liporata', 'Lipo', 'chiara@example.com');
 $chiara->setSconto(19);
-$chiara->insertCreditCard($chiara, $mycard);
+$chiara->insertCreditCard($mycard);
 var_dump($chiara);
 
 $edoardo = new User('Edoardo', 'Strada', 'Dodo', 'edo@example.com');
