@@ -59,14 +59,24 @@ class User
         $this->lastname = $lastname;
         $this->nickname = $nickname;
         $this->email = $email;
-        /* $this->eta = $eta; */
     } 
 
-    public function setSconto($eta) {
+    function setSconto($eta) {
         if($eta > 40) {
             $this->sconto = 10;
         }
     }
+
+    function insertCreditCard($utente, $card){
+        
+
+        foreach ($card as $key){
+            var_dump($key);
+        }
+        array_push($utente, $key);
+    }
+
+
 }
 
 /* Premium Extends */
@@ -80,7 +90,7 @@ class Premium extends User
         $this->level = $level;
     }
 
-    public function setSconto($eta) {
+    function setSconto($eta) {
         if($eta > 40) {
             $this->sconto = 20;
         } else{
@@ -93,12 +103,12 @@ class Premium extends User
 
 $chiara = new User('Chiara', 'Liporata', 'Lipo', 'chiara@example.com');
 $chiara->setSconto(19);
+$chiara->insertCreditCard($chiara, $mycard);
 var_dump($chiara);
 
 $edoardo = new User('Edoardo', 'Strada', 'Dodo', 'edo@example.com');
 $edoardo->setSconto(41);
 var_dump($edoardo);
-
 
 $tiziano = new Premium('Tiziano', 'Amati', 'Tizi', 'tizi@example.com', 1);
 $tiziano->setSconto(52);
@@ -109,6 +119,27 @@ $lorenzo->setSconto(21);
 var_dump($lorenzo);
 
 /* /USER */
+
+
+/* CREDIT CARD */
+class CrediCard
+{
+    public $nameCard;
+    public $deadline;
+    public $cvc;
+
+    function __construct(int $nameCard, int $deadline, int $cvc)
+    {
+        $this->nameCard = $nameCard;
+        $this->deadline = $deadline;
+        $this->cvc = $cvc;
+    }
+}
+
+$mycard = new CrediCard(10325568, 101221, 437);
+var_dump($mycard);
+
+
 
 
 ?>
