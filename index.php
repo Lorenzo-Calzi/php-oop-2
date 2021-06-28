@@ -1,6 +1,6 @@
 <?php 
 
-/* Product */
+/* PRODUCT */
 class Product
 {
     public $name;
@@ -14,10 +14,32 @@ class Product
         $this->price = $price;
     }
 }
-/* /Product */
 
 
-/* User */
+/* Category Extends */
+class Category extends Product
+{
+    public $category;
+
+    function __construct(string $name, string $brand, float $price, string $category)
+    {
+        parent::__construct($name, $brand, $price);
+        $this->category = $category;
+    }
+}
+
+
+$oppo = new Product('Find X3 Pro', 'OPPO', 1149.99);
+$apple = new Category('Iphone 12 Pro', 'Apple', 1299.99, 'Smartphone');
+
+var_dump($oppo);
+var_dump($apple);
+
+/* /PRODUCT */
+
+
+
+/* USER */
 class User
 {
     public $name;
@@ -33,11 +55,27 @@ class User
         $this->email = $email;
     }
 }
-/* /User */
+
+/* Premium Extends */
+class Premium extends User
+{
+    public $discount;
+
+    function __construct(string $name, string $lastname, string $nickname, string $email, int $discount)
+    {
+        parent::__construct($name, $lastname, $nickname, $email);
+        $this->discount = $discount;
+    }
+}
 
 
+$chiara = new User('Chiara', 'Liporata', 'Lipo', 'clipo@example.com');
+$lorenzo = new Premium('Lorenzo', 'Calzi', 'Lo', 'lorenzo@example.com', 20);
 
+var_dump($chiara);
+var_dump($lorenzo);
 
+/* /USER */
 
 
 ?>
