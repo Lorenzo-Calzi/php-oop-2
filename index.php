@@ -1,15 +1,26 @@
 <?php 
 
 /* PRODUCT */
-class Product
+class Category
+{
+    public $category;
+
+    public function __construct(string $category) {
+        $this->category = $category;
+    }
+}
+
+
+class Product extends Category
 {
     public $name;
     public $brand;
     public $price;
     public $description;
 
-    function __construct(string $name, string $brand, float $price, string $description)
+    function __construct(string $category, string $name, string $brand, float $price, string $description)
     {
+        parent::__construct($category);
         $this->name = $name;
         $this->brand = $brand;
         $this->price = $price;
@@ -18,27 +29,15 @@ class Product
 }
 
 
-/* Category Extends */
-class Category extends Product
-{
-    public $category;
+$oppo = new Product('Smartphone', 'Find X3 Pro', 'OPPO', 1149.99, 'Lorem ipsum dolor sit amet.');
+$dyson = new Product('Aspirapolvere', 'V11 Absolute', 'Dyson', 565.90, 'Lorem ipsum dolor sit amet.');
+$apple = new Product('Smartphone', 'Iphone 12 Pro', 'Apple', 1299.99, 'Lorem ipsum dolor sit amet');
+$netgear = new Product('Wi-Fi Cam', 'Arlo Pro 3', 'netgear', 199.99, 'Lorem ipsum dolor sit amet.');
 
-    function __construct(string $name, string $brand, float $price, string $description, string $category)
-    {
-        parent::__construct($name, $brand, $price, $description);
-        $this->category = $category;
-    }
-}
-
-$oppo = new Category('Find X3 Pro', 'OPPO', 1149.99, 'Lorem ipsum dolor sit amet.', 'Smartphone');
-$dyson = new Category('V11 Absolute', 'Dyson', 565.90, 'Lorem ipsum dolor sit amet.', 'Aspirapolvere');
-$apple = new Category('Iphone 12 Pro', 'Apple', 1299.99, 'Lorem ipsum dolor sit amet.', 'Smartphone');
-$netgear = new Category('Arlo Pro 3', 'netgear', 199.99, 'Lorem ipsum dolor sit amet.', 'Wi-Fi Cam');
-
-/* var_dump($oppo);
+var_dump($oppo);
 var_dump($dyson);
 var_dump($oppo);
-var_dump($netgear); */
+var_dump($netgear);
 
 /* /PRODUCT */
 
@@ -72,8 +71,6 @@ class User
         foreach ($card as $key){
             echo($key);
         }
-
-        array_push($chiara, $card);
     }
 
 
