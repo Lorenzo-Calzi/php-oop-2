@@ -36,7 +36,7 @@ $netgear = new Product('Wi-Fi Cam', 'Arlo Pro 3', 'netgear', 199.99, 'Lorem ipsu
 
 var_dump($oppo);
 var_dump($dyson);
-var_dump($oppo);
+var_dump($apple);
 var_dump($netgear);
 
 /* /PRODUCT */
@@ -69,7 +69,7 @@ class User
     function insertCreditCard($card){
     
         foreach ($card as $key){
-            echo($key);
+            /* echo($key); */
         }
     }
 
@@ -100,20 +100,19 @@ class Premium extends User
 
 $chiara = new User('Chiara', 'Liporata', 'Lipo', 'chiara@example.com');
 $chiara->setSconto(19);
-
-var_dump($chiara);
+/* var_dump($chiara); */
 
 $edoardo = new User('Edoardo', 'Strada', 'Dodo', 'edo@example.com');
 $edoardo->setSconto(41);
-var_dump($edoardo);
+/* var_dump($edoardo); */
 
 $tiziano = new Premium('Tiziano', 'Amati', 'Tizi', 'tizi@example.com', 1);
 $tiziano->setSconto(52);
-var_dump($tiziano);
+/* var_dump($tiziano); */
 
 $lorenzo = new Premium('Lorenzo', 'Calzi', 'Lo', 'lorenzo@example.com', 3);
 $lorenzo->setSconto(21);
-var_dump($lorenzo);
+/* var_dump($lorenzo); */
 
 /* /USER */
 
@@ -134,7 +133,7 @@ class CrediCard
 }
 
 $mycard = new CrediCard(10325568, 101221, 437);
-var_dump($mycard);
+/* var_dump($mycard); */
 
 
 $chiara->insertCreditCard($mycard);
