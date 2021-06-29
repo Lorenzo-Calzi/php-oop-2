@@ -15,9 +15,16 @@ class User
 
     public function setSconto($eta)
     {
-        if($eta > 65) {
+        if($eta > 18) {
             $this->sconto = 10;
         }
+    }
+
+    function multiplication($int) {
+        if (!is_int($int)) {
+            throw new Exception('Is not a number');
+        }
+        return $int*5;
     }
 }
 
