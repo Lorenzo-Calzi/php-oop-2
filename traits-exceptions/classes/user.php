@@ -1,5 +1,4 @@
 <?php 
-
 class User
 {
     public $name;
@@ -14,10 +13,14 @@ class User
     }
 
     public function setSconto($eta)
-    {
-        if($eta > 18) {
-            $this->sconto = 10;
+    {   if(!is_int($eta)) {
+            throw new Exception('Is not a number');
+        } else {
+            if($eta > 18) {
+                $this->sconto = 10;
+            }
         }
+        
     }
 
     function multiplication($int) {
@@ -28,8 +31,14 @@ class User
     }
 }
 
+$esError = new User('prova', 'prova', 1);
+// Corretto
+$esError->multiplication(0); 
+// Errore
+/* $esError->multiplication('Ciao');  */
 
-/* $prova->multiplication(5); */
+
+
 
 /* Traits */
 trait AddWork {

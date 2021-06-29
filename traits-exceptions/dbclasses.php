@@ -42,5 +42,23 @@ require __DIR__ . '/classes/employee.php';
         <?php }
     ?>
 
+    
+
+    <div class="error" style="margin: 20px;"> 
+        <?php 
+            try {
+                ?> <h3 style="color: rgb(209, 40, 40);">Value:</h3> <?php
+                echo $employee[0]->multiplication('ciao');
+            } catch (Exception $e) {
+                ?> <h3 style="color: rgb(209, 40, 40);">Error:</h3> <?php
+                echo 'Eccezione: ' . $e->getMessage(); 
+            }
+        ?> 
+    </div>
+
+    
+
+
+
 </body>
 </html>

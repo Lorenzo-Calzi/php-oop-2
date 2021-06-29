@@ -24,10 +24,5 @@ $employee = [
 
 /* var_dump($employee); */
 
-/* try {
-    echo multiplication('ciao');
-} catch (Exception $e) {
-    echo 'Eccezione: ' . $e->getMessage(); 
-} */
 
 ?>
