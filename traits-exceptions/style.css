@@ -1,0 +1,24 @@
+body{
+    font-family: 'Source Serif Pro', serif;
+}
+
+h1{
+    margin: 20px 10px 25px 20px;
+    font-size: 40px;
+    color: red;
+}
+
+.user{
+    width: 250px;
+    padding: 25px;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(233, 221, 221);
+}
+
+h4{
+    font-size: 18px;
+    margin: 0 0 25px 0;
+}
+

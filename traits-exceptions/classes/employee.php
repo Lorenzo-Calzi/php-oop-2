@@ -22,12 +22,12 @@ $employee = [
     new Employee('Carmen', 'carmen@example.com', 5, 3)
 ];
 
-var_dump($employee);
+/* var_dump($employee); */
 
-try {
+/* try {
     echo multiplication('ciao');
 } catch (Exception $e) {
     echo 'Eccezione: ' . $e->getMessage(); 
-}
+} */
 
 ?>

@@ -29,6 +29,8 @@ class User
 }
 
 
+/* $prova->multiplication(5); */
+
 /* Traits */
 trait AddWork {
     protected $work = 'Web Developer'; 
